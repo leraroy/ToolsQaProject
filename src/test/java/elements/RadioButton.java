@@ -6,9 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * Created by Lera on 07.06.2022
- */
+
 public class RadioButton extends Options {
     //private WebDriver driver;
 

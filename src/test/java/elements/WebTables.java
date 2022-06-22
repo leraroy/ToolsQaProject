@@ -10,9 +10,7 @@ import org.openqa.selenium.WebElement;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 08.06.2022
- */
+
 public class WebTables extends Options {
     //private WebDriver driver;
 

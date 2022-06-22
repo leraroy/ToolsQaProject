@@ -20,9 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 12.06.2022
- */
+
 public class LinksTest {
     //private WebDriver driver;
     private final static String BASE_URL="https://demoqa.com/";

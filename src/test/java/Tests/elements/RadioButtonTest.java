@@ -17,9 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 07.06.2022
- */
+
 public class RadioButtonTest {
     //private WebDriver driver;
     private RadioButton radioButton;

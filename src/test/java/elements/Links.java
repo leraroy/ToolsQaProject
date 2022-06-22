@@ -15,9 +15,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 09.06.2022
- */
+
 public class Links extends Options {
    // private WebDriver driver;
 

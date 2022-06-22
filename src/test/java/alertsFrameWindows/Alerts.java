@@ -14,9 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 17.06.2022
- */
+
 public class Alerts extends Options {
     private WebDriverWait wait;
     private String NAME=RandomDataGenerator.getRandomName();

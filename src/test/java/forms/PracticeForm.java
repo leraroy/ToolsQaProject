@@ -11,9 +11,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 15.06.2022
- */
+
 public class PracticeForm extends Options {
     //private WebDriver driver;
     private PracticeFormData practiceFormData=new PracticeFormData();

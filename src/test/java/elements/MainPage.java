@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * Created by Lera on 05.06.2022
- */
+
 public class MainPage extends Options {
     //private WebDriver driver;
 

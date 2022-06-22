@@ -9,9 +9,7 @@ import org.openqa.selenium.WebElement;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 18.06.2022
- */
+
 public class Accordian extends Options {
 //    private WebDriver driver;
 
@@ -26,8 +24,6 @@ public class Accordian extends Options {
     public Accordian() {
         open("https://demoqa.com/accordian");
     }
-
-
 
     public Accordian clickWhatIs(){
         //clickElement(whatIs);

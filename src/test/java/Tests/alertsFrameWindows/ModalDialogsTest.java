@@ -15,9 +15,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 18.06.2022
- */
+
 public class ModalDialogsTest {
    // private WebDriver driver;
     private ModalDialogs modalDialogs;

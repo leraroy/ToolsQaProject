@@ -18,9 +18,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 13.06.2022
- */
+
 public class UploadAndDownload extends Options{
     private WebDriver driver;
     private WebDriverWait wait;

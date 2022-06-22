@@ -16,9 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 23.02.2022
- */
+
 public class RegisterTestClass {
    // private WebDriver driver;
     private RegisterPage registerPage;

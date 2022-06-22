@@ -5,9 +5,7 @@ import data.RandomDataGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by Lera on 15.06.2022
- */
+
 public class PracticeFormData {
     private final String FIRST_NAME= RandomDataGenerator.getRandomName();
     private final String LAST_NAME= RandomDataGenerator.getRandomName();

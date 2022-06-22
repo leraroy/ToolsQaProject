@@ -15,9 +15,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 13.06.2022
- */
+
 public class DynamicPropertiesTest {
    // private WebDriver driver;
     private DynamicProperties dynamicProperties;

@@ -8,12 +8,9 @@ import org.openqa.selenium.interactions.Actions;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * Created by Lera on 09.06.2022
- */
+
 public class Buttons extends Options {
    // private WebDriver driver;
-    //private Actions actions;
 
     private By doubleClick=By.xpath("//*[@id='doubleClickBtn']");
     private By rightClick=By.xpath("//*[@id='rightClickBtn']");

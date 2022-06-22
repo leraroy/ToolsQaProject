@@ -18,9 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 07.06.2022
- */
+
 public class TextBoxTest {
    // private WebDriver driver;
     private TextBox textBox;

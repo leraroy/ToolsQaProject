@@ -17,9 +17,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 17.06.2022
- */
+
 public class AlertsTest {
     private WebDriver driver;
     private Alerts alerts;

@@ -10,9 +10,6 @@ import java.io.*;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * Created by Lera on 18.06.2022
- */
 public class ModalDialogs extends Options {
     private WebDriver driver;
 

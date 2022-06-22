@@ -13,9 +13,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 13.06.2022
- */
+
 public class DynamicProperties extends Options {
     //private WebDriver driver;
     private WebDriverWait wait;

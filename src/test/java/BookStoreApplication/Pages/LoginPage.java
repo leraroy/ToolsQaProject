@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
 
-/**
- * Created by Lera on 23.02.2022
- */
+
 public class LoginPage {
    // private WebDriver driver;
 

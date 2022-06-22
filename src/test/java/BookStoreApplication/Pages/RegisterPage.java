@@ -14,10 +14,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
-/**
- * Created by Lera on 23.02.2022
- */
-
 public class RegisterPage {
     //private WebDriver driver;
     private final Color INVALID_FIELD = Color.fromString("#dc3545");

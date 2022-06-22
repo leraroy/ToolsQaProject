@@ -13,9 +13,7 @@ import java.util.Set;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 17.06.2022
- */
+
 public class BrowserWindows extends Options {
    // private WebDriver driver;
 

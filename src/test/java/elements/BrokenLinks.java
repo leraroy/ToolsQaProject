@@ -18,9 +18,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Created by Lera on 12.06.2022
- */
+
 public class BrokenLinks extends Options {
     //private WebDriver driver;
 

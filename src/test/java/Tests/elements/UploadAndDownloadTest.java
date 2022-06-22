@@ -11,9 +11,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 13.06.2022
- */
+
 public class UploadAndDownloadTest {
      UploadAndDownload uploadAndDownload=new UploadAndDownload();
     private final static String BASE_URL="https://demoqa.com/";

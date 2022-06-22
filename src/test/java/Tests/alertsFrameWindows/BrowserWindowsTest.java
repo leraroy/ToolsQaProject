@@ -15,9 +15,6 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by Lera on 17.06.2022
- */
 public class BrowserWindowsTest {
    // private WebDriver driver;
     private BrowserWindows browserWindows;
