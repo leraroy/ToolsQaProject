@@ -10,9 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by Lera on 23.02.2022
- */
+
 public class RandomDataGenerator {
     private static Faker faker=new Faker();
     private static Random random=new Random();

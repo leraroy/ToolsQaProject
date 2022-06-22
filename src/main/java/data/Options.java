@@ -11,11 +11,32 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
 
-/**
- * Created by Lera on 05.06.2022
- */
+
 public class Options{
-    /*private static WebDriver driver;
+    public  boolean isEqual(File firstFile, File secondFile)
+    {
+        try {
+            return FileUtils.contentEquals(firstFile, secondFile);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public void textIntoFile(String PATH, WebElement element ){
+        String result = null;
+
+        try (FileWriter writer = new FileWriter(PATH)) {
+            new FileOutputStream(PATH).close();
+            Thread.sleep(5000);
+            result = element.getText();
+            for (int i = 0; i < result.length(); i++)
+                writer.write(result.charAt(i));
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+        /*private static WebDriver driver;
     private static WebDriverWait wait;
 
     public  void clickElement(By by){
@@ -51,27 +72,4 @@ public class Options{
     }
 
      */
-    public  boolean isEqual(File firstFile, File secondFile)
-    {
-        try {
-            return FileUtils.contentEquals(firstFile, secondFile);
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-            return false;
-        }
-    }
-    public void textIntoFile(String PATH, WebElement element ){
-        String result = null;
-
-        try (FileWriter writer = new FileWriter(PATH)) {
-            new FileOutputStream(PATH).close();
-            Thread.sleep(5000);
-            result = element.getText();
-            for (int i = 0; i < result.length(); i++)
-                writer.write(result.charAt(i));
-        } catch (InterruptedException | IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

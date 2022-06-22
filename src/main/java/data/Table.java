@@ -9,9 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Lera on 09.06.2022
- */
+
 public class Table {
     private WebElement tableElement;
     private WebDriver driver;
