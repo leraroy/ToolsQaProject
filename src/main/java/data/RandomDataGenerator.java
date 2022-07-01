@@ -55,15 +55,11 @@ public class RandomDataGenerator {
         String result=name+upperCaseLetters+lowerCaseLetters+numbers+specialChar+totalChars;
         return result;
     }
-    public static String getDateStringForDateBefore(String format){
-        int maxDayDifference=1000;
-        LocalDate date=LocalDate.now();
-        Random rand = new Random();
-        int days = rand.nextInt(maxDayDifference);
-        LocalDate randomDate=date.minusDays(days);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-        String formattedDateTime = randomDate.format(formatter);
-        return formattedDateTime;
+    public static String getRandomDate(String format){
+            SimpleDateFormat sdf = new SimpleDateFormat(format);
+            String date=sdf.format(faker.date().birthday());
+            System.out.println(date);
+            return date;
+        }
     }
 
-}
