@@ -1,20 +1,19 @@
 package forms;
 
-import data.Options;
-import data.RandomDataGenerator;
+import data.DatePicker;
 import org.openqa.selenium.*;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
-public class PracticeForm extends Options {
-    //private WebDriver driver;
-    private PracticeFormData practiceFormData=new PracticeFormData();
+public class PracticeForm extends PracticeFormData{
 
     private By firstName=By.xpath("//input[@id='firstName']");
     private By lastName=By.xpath("//input[@id='lastName']");
@@ -37,7 +36,7 @@ public class PracticeForm extends Options {
 
 
     public PracticeForm enterFirstName(){
-        $(firstName).sendKeys(practiceFormData.getFIRST_NAME());
+        $(firstName).sendKeys(getFIRST_NAME());
         return this;
     }
     public WebElement getTable(){
@@ -45,56 +44,66 @@ public class PracticeForm extends Options {
     }
 
     public PracticeForm enterLastName(){
-        $(lastName).sendKeys(practiceFormData.getLAST_NAME());
+        $(lastName).sendKeys(getLAST_NAME());
         return this;
     }
 
     public PracticeForm enterEmail(){
-        $(email).sendKeys(practiceFormData.getEMAIL());
+        $(email).sendKeys(getEMAIL());
         return this;
     }
 
     public PracticeForm clickGenderMale(){
         $(genderMale).click();
+        setGENDER($(genderMale).getText());
         return this;
     }
 
     public PracticeForm clickGenderFemale(){
         $(genderFemale).click();
+        setGENDER($(genderFemale).getText());
         return this;
     }
 
     public PracticeForm clickGenderOther(){
         $(genderOther).click();
+        setGENDER($(genderOther).getText());
         return this;
     }
 
     public PracticeForm enterMobilePhone(){
-        $(mobile).sendKeys(practiceFormData.getPHONE());
+        $(mobile).sendKeys(getPHONE());
         return this;
     }
-    public PracticeForm enterDateOfBirth(){
-        $(dateOfBirth).sendKeys(RandomDataGenerator.getRandomDateOfBirth());
-        $(dateOfBirth).sendKeys(Keys.ENTER);
+    public PracticeForm enterDateOfBirth() throws InterruptedException {
+        $(dateOfBirth).scrollTo();
+        DatePicker datePicker=new DatePicker();
+        datePicker.clickSelectDate(dateOfBirth);
+        String [] arrayDate=getDATE_OF_BIRTH().split("/");
+        datePicker.selectDateYear(arrayDate[2]);
+        datePicker.selectDateMonth(arrayDate[1]);
+        Thread.sleep(200);
+        datePicker.selectDateDay(arrayDate[0]);
         return this;
     }
     public PracticeForm subject(){
-        $(subjects).sendKeys("Maths");
+        $(subjects).scrollTo().sendKeys("Maths");
         $(subjects).sendKeys(Keys.ENTER);
+        setSUBJECT($(By.xpath("(//div[contains(@class, 'multi-value')])[1]")).getText());
         return this;
     }
     public PracticeForm hobbies(){
-        $(hobbiesSport).scrollTo();
-        $(hobbiesSport).click();
+        $(hobbiesSport).scrollTo().click();
+        setHOBBIES($(hobbiesSport).getText());
         return this;
     }
     public PracticeForm selectPicture(){
-        $(selectPicture).scrollTo();
-        $(selectPicture).sendKeys("C:\\Users\\Lera\\Pictures\\1.jpg");
+        $(selectPicture).scrollTo().sendKeys("C:\\Users\\Lera\\Pictures\\1.jpg");
+        setPICTURE("1.jpg");
         return this;
     }
     public PracticeForm currentAddress(){
-        $(currentAddress).sendKeys(practiceFormData.getCURRENT_ADDRESS());
+        $(currentAddress).sendKeys(getCURRENT_ADDRESS());
         return this;
     }
     public PracticeForm selectState(String state){
@@ -125,16 +134,29 @@ public class PracticeForm extends Options {
         List<WebElement> elementsCity=getWebDriver().findElements(By.xpath("//div[contains(@class,'menu')]/div"));
         for (WebElement el:
              elementsCity) {
-            System.out.println(el.getText());
             el.click();
         }
         return this;
     }
     public PracticeForm clickSubmit(){
-        $(submit).click();
+        $(submit).scrollTo().click();
         return this;
     }
-    public PracticeForm fillForm(){
+    public List<String> getInvalidBorderInput() throws InterruptedException {
+        String properties="border-color";
+        List<String> colors=new ArrayList<>();
+        colors.add($(firstName).getCssValue(properties));
+        colors.add($(lastName).getCssValue(properties));
+        $(email).sendKeys("!",Keys.ENTER);
+        Thread.sleep(200);
+        colors.add($(email).getCssValue(properties));
+        colors.add($(mobile).getCssValue(properties));
+        colors.add($(genderMale).getCssValue(properties));
+        colors.add($(genderFemale).getCssValue(properties));
+        colors.add($(genderOther).getCssValue(properties));
+        return colors;
+    }
+    public PracticeForm fillForm() throws InterruptedException {
         enterFirstName();
         enterLastName();
         enterEmail();
@@ -147,27 +169,35 @@ public class PracticeForm extends Options {
         currentAddress();
         selectState("NCR");
         selectCity();
-      //  clickSubmit();
+        clickSubmit();
         return this;
     }
     public List<String> getDataForm(){
         List<String> data =new ArrayList<>();
-        data.add(practiceFormData.getFIRST_NAME()+" "+practiceFormData.getLAST_NAME());
-        data.add(practiceFormData.getEMAIL());
-        data.add($(genderMale).getText());
-        data.add(practiceFormData.getPHONE());
-        data.add(practiceFormData.getDATE_OF_BIRTH());
-        data.add($(subjects).getText());
-        data.add($(hobbiesSport).getText());
-        data.add($(selectPicture).getText());
-        data.add(practiceFormData.getCURRENT_ADDRESS());
-        data.add($(selectState).getText()+" "+$(selectCity).getText());
-
+        data.add(getFIRST_NAME()+" "+getLAST_NAME());
+        data.add(getEMAIL());
+        data.add(getGENDER());
+        data.add(getPHONE());
+        data.add(getDATE_OF_BIRTH());
+        data.add(getSUBJECT());
+        data.add(getHOBBIES());
+        data.add(getPICTURE());
+        data.add(getCURRENT_ADDRESS());
+        data.add($(selectState).getText()+" "+$(By.xpath("//div[@id='city']//div[contains(@class, 'singleValue')]")).getText());
         return data;
     }
-    public List<WebElement> getRows(){
+    public List<String> getResultTable() throws ParseException {
         List<WebElement> rows=getTable().findElements(By.xpath("//td[2]"));
-        return rows;
+        List<String> result_table=new ArrayList<>();
+        for (WebElement e :
+                rows) {
+            result_table.add(e.getText());
+        }
+        Date date1=new SimpleDateFormat("dd MMMM,yyyy",new Locale("en")).parse(result_table.get(4));
+        String date=new SimpleDateFormat("dd/MM/yyyy", new Locale("en")).format(date1);
+        result_table.remove(4);
+        result_table.add(4,date);
+        return result_table;
     }
 
 

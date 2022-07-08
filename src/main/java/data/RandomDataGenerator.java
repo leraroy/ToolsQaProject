@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 
@@ -56,7 +57,7 @@ public class RandomDataGenerator {
         return result;
     }
     public static String getRandomDate(String format){
-            SimpleDateFormat sdf = new SimpleDateFormat(format);
+            SimpleDateFormat sdf = new SimpleDateFormat(format,new Locale("en"));
             String date=sdf.format(faker.date().birthday());
             System.out.println(date);
             return date;
